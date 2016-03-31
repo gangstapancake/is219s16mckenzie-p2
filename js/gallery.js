@@ -67,8 +67,8 @@ if (mRequest.readyState == 4 && mRequest.status == 200) {
     }
 };
 
-xmlhttp.open("GET", mUrl, true);
-xmlhttp.send();
+mRequest.open("GET", mUrl, true);
+mRequest.send();
 
 function makeGalleryImageOnloadCallback(galleryImage) {
 	return function(e) {
