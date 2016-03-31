@@ -62,8 +62,8 @@ var mUrl = 'images.json';
 
 mRequest.onreadystatechange = function() {
 if (mRequest.readyState == 4 && mRequest.status == 200) {
-    var mImages = JSON.parse(mRequest.responseText);
-    myFunction(mImages);
+    var mJson = JSON.parse(mRequest.responseText);
+    myFunction(mJson);
     }
 };
 
