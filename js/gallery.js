@@ -37,7 +37,6 @@ function swapPhoto() {
 	//Access the img element and replace its source
 	//with a new image from your images array which is loaded 
 	//from the JSON string
-	$("#slideShow).text(mImages.next());
 	console.log('swap photo');
 }
 
