@@ -106,15 +106,21 @@ window.addEventListener('load', function() {
 		this.location = location;
 		this.description = description;
 		this.date = date;
-		this.url = url;
+		this.img = img;
 		
 	}
 	
-	function myFunction(galleryImage)
+	function myFunction(mJson)
 	{
-		foreach(var i in galleryImage)
+		for(var i = 0; i < mJson.length;i++)
 		{
-		
+			GalleryImage.img = mJson[i].imgPath;
+			GalleryImage.location = mJson[i].imgLocation;
+			GalleryImage.description = mJson[i].description;
+			GalleryImage.date = mJson[i].date;
+			
+			mImages.push(mJson[i]);
+			console.log(mJson[i]);
 		}
 	
 	}
