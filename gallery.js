@@ -60,6 +60,9 @@ var mUrl = 'images.json';
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
 //@param A GalleryImage object. Use this method for an event handler for loading a gallery Image object (optional).
+function reqListener () {
+console.log(this.responseText);
+}
 
 mRequest.onreadystatechange = function() {
 if (mRequest.readyState == 4 && mRequest.status == 200) {
@@ -68,6 +71,7 @@ if (mRequest.readyState == 4 && mRequest.status == 200) {
     }
 };
 
+mRequest.addEventListener("load", reqListener);
 mRequest.open("GET", mUrl, true);
 mRequest.send();
 
@@ -105,7 +109,15 @@ window.addEventListener('load', function() {
 		this.url = url;
 		
 	}
-
+	
+	function myFunction(galleryImage)
+	{
+		foreach(var i in galleryImage)
+		{
+		
+		}
+	
+	}
 
 
 
