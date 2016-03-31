@@ -39,7 +39,7 @@ function swapPhoto() {
 	//from the JSON string
 	var next = mImages[].next();
 	
-	$('.thumbnail').attr('src') = next.img;
+	$('.thumbnail').attr('src', next.img);
 	$('.location').text = next.location;
 	$('.description').text = next.description;
 	$('.date').text = next.date;
