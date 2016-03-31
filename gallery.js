@@ -89,8 +89,10 @@ $(document).ready( function() {
 	
 });
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function() 
+{
 	
+    myFunction(mJson);
 	console.log('window loaded');
 
 }, false);
@@ -112,15 +114,16 @@ window.addEventListener('load', function() {
 	
 	function myFunction(mJson)
 	{
-		for(var i = 0; i < mJson.length;i++)
+		//for(var i = 0; i < mJson.length;i++)
+		for(var obj in mJson)
 		{
-			GalleryImage.img = mJson[i].imgPath;
-			GalleryImage.location = mJson[i].imgLocation;
-			GalleryImage.description = mJson[i].description;
-			GalleryImage.date = mJson[i].date;
+			GalleryImage.img = mJson[obj].imgPath;
+			GalleryImage.location = mJson[obj].imgLocation;
+			GalleryImage.description = mJson[obj].description;
+			GalleryImage.date = mJson[obj].date;
 			
-			mImages.push(mJson[i]);
-			console.log(mJson[i]);
+			mImages.push(mJson[obj]);
+			console.log(mJson[obj]);
 		}
 	
 	}
