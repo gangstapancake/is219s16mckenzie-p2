@@ -125,7 +125,7 @@ window.addEventListener('load', function()
 	{
 		for(var i = 0; i < mJson.images.length;i++)
 		{
-			mImages[].push(new GalleryImage(mJson.images[i].imgLocation, mJson.images[i].description, mJson.images[i].date, mJson.images[i].imgPath));
+			mImages.push(new GalleryImage(mJson.images[i].imgLocation, mJson.images[i].description, mJson.images[i].date, mJson.images[i].imgPath));
 			console.log(mJson.images[i]);
 		}
 	
