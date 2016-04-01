@@ -30,8 +30,6 @@ function animate() {
 	}
 }
 
-/************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
-var mCurrentIndex;
 function swapPhoto() {
 	//Add code here to access the #slideShow element.
 	//Access the img element and replace its source
@@ -39,18 +37,17 @@ function swapPhoto() {
 	//from the JSON string
 	if(mCurrentIndex < mImages.length)
 	{	
+		$('.thumbnail').attr('src', mImages[mCurrentIndex].img);
+		$('.location').text = mImages[mCurrentIndex].location;
+		$('.description').text = mImages[mCurrentIndex].description;
+		$('.date').text = mImages[mCurrentIndex].date;
+		console.log('swap photo');
 		mCurrentIndex++;
 	}
 	else
 	{
 		mCurrentIndex = 0;
 	}
-	
-	$('.thumbnail').attr('src', mImages[mCurrentIndex].img);
-	$('.location').text = mImages[mCurrentIndex].location;
-	$('.description').text = mImages[mCurrentIndex].description;
-	$('.date').text = mImages[mCurrentIndex].date;
-	console.log('swap photo');
 }
 
 // Counter for the mImages array
@@ -116,7 +113,7 @@ window.addEventListener('load', function()
 	//3. the date when the photo was taken
 	//4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
 	
-	function GalleryImage(location,description,date,url) {
+	function GalleryImage(location,description,date,img) {
 		this.location = location;
 		this.description = description;
 		this.date = date;
@@ -126,16 +123,10 @@ window.addEventListener('load', function()
 	
 	function myFunction(mJson)
 	{
-		//for(var i = 0; i < mJson.length;i++)
-		for(var obj in mJson)
+		for(var i = 0; i < mJson.images.length;i++)
 		{
-			GalleryImage.img = mJson[obj].imgPath;
-			GalleryImage.location = mJson[obj].imgLocation;
-			GalleryImage.description = mJson[obj].description;
-			GalleryImage.date = mJson[obj].date;
-			
-			mImages.push(mJson[obj]);
-			console.log(mJson[obj]);
+			mImages[].push(new GalleryImage(mJson.images[i].imgLocation, mJson.images[i].description, mJson.images[i].date, mJson.images[i].imgPath));
+			console.log(mJson.images[i]);
 		}
 	
 	}
