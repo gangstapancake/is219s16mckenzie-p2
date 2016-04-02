@@ -131,7 +131,11 @@ window.addEventListener('load', function()
 	
 	}
 
-
+	$('img.moreIndicator').click(function() 
+	{
+		$(this).toggleClass("rot270");
+		$("div.details").toggle();
+	}
 
 
 
