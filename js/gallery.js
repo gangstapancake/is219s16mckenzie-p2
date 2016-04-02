@@ -44,7 +44,7 @@ $('img.moreIndicator').click(function()
 		{
 			$(this).removeClass("rot270");
 			$(this).addClass("rot90");
-			$("div.details").fadetoggle();
+			$("div.details").toggle();
 		});
 
 		$('#prevPhoto').click(function() 
