@@ -76,6 +76,9 @@ function swapPhoto() {
 		$('.description').text = mImages[mCurrentIndex].description;
 		$('.date').text = mImages[mCurrentIndex].date;
 		console.log('swap photo');
+		console.log(mImages[mCurrentIndex].location);
+		console.log(mImages[mCurrentIndex].description);
+		console.log(mImages[mCurrentIndex].date);
 		mCurrentIndex++;
 	}
 	else
