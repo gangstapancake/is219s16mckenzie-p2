@@ -29,7 +29,9 @@ function animate() {
 		mLastFrameTime = currentTime;
 	}
 }
-$('img.moreIndicator').click(function() 
+$(document).ready(function(){
+
+	$('#more').click(function() 
 	{	
 		alert("Clicked");
 		console.log("click more");
@@ -59,6 +61,7 @@ $('img.moreIndicator').click(function()
 			console.log("click next");
 			alert("Clicked");
 		});
+	});
 
 function swapPhoto() {
 	//Add code here to access the #slideShow element.
