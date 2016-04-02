@@ -70,6 +70,13 @@ body {
 	float: right;
 }
 
+#nextPhoto:hover {
+	opacity: .5;
+}
+
+#prevPhoto:hover {
+	opacity: .5;
+}
 .details p {
 	margin-top: 20px;
 }
