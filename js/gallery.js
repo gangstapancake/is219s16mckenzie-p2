@@ -60,7 +60,7 @@ function animate() {
 		{
 			console.log("click next");
 			swapPhoto();
-		}
+		});
 	
 	
 
