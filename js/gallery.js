@@ -132,7 +132,7 @@ window.addEventListener('load', function()
 	}
 
 	$("#more").click(function() 
-	{
+	{	alert("Clicked");
 		console.log("click more");
 		$(this).toggleClass("rot270");
 		$("div.details").toggle();
