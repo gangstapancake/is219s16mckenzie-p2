@@ -1,4 +1,7 @@
 // requestAnim shim layer by Paul Irish
+
+$(document).ready(function(){
+
     window.requestAnimFrame = (function(){
       return  window.requestAnimationFrame       || 
               window.webkitRequestAnimationFrame || 
@@ -29,11 +32,9 @@ function animate() {
 		mLastFrameTime = currentTime;
 	}
 }
-$(document).ready(function(){
 
 	$('#more').click(function() 
 	{	
-		alert("Clicked");
 		console.log("click more");
 		
 		if($("img.moreIndicator").hasClass("rot90"))
@@ -53,15 +54,15 @@ $(document).ready(function(){
 		$('#prevPhoto').click(function() 
 		{
 			console.log("click prev");
-			alert("Clicked");
 		});
 		
 		$('#nextPhoto').click(function() 
 		{
 			console.log("click next");
-			alert("Clicked");
+			var current = $('
 		});
-	});
+	
+	
 
 function swapPhoto() {
 	//Add code here to access the #slideShow element.
@@ -165,3 +166,4 @@ window.addEventListener('load', function()
 	}
 
 	
+	});
