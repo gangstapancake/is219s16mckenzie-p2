@@ -133,6 +133,7 @@ window.addEventListener('load', function()
 
 	$('img.moreIndicator.rot90').click(function() 
 	{
+		console.log("click more");
 		$(this).toggleClass("rot270");
 		$("div.details").toggle();
 	});
