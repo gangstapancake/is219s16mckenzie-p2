@@ -29,6 +29,25 @@ function animate() {
 		mLastFrameTime = currentTime;
 	}
 }
+$('#more').click(function() 
+	{	
+		alert("Clicked");
+		console.log("click more");
+		$(this).toggleClass("rot270");
+		$("div.details").toggle();
+	});
+
+		$('#prevPhoto').click(function() 
+		{
+			console.log("click prev");
+			alert("Clicked");
+		});
+		
+		$('#nextPhoto').click(function() 
+		{
+			console.log("click next");
+			alert("Clicked");
+		});
 
 function swapPhoto() {
 	//Add code here to access the #slideShow element.
@@ -131,20 +150,4 @@ window.addEventListener('load', function()
 	
 	}
 
-	$("#more").click(function() 
-	{	alert("Clicked");
-		console.log("click more");
-		$(this).toggleClass("rot270");
-		$("div.details").toggle();
-	});
-
-		$("#prevPhoto").click(function() 
-		{
-			console.log("click prev");
-		});
-		
-		$("#nextPhoto").click(function() 
-		{
-			console.log("click next");
-		});
-
+	
