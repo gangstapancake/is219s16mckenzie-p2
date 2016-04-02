@@ -138,5 +138,13 @@ window.addEventListener('load', function()
 		$("div.details").toggle();
 	});
 
-
+		$("#prevPhoto").click(function() 
+		{
+			console.log("click prev");
+		});
+		
+		$("#nextPhoto").click(function() 
+		{
+			console.log("click next");
+		});
 
