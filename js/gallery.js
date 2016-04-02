@@ -41,13 +41,13 @@ function animate() {
 		{
 			$(this).removeClass("rot90");
 			$(this).addClass("rot270");
-			$("div.details").fadetoggle();
+			$("div.details").show();
 		}
 		else
 		{
 			$(this).removeClass("rot270");
 			$(this).addClass("rot90");
-			$("div.details").toggle();
+			$("div.details").hide();		
 		}
 	});
 
@@ -113,6 +113,20 @@ if (mRequest.readyState == 4 && mRequest.status == 200) {
     myFunction(mJson);
     }
 };
+
+// function getQueryParams(qs) {
+ // qs = qs.split("+").join(" ");
+ // var params = {},
+ // tokens,
+ // re = /[?&]?([^=]+)=([^&]*)/g;
+ // while (tokens = re.exec(qs)) {
+ // params[decodeURIComponent(tokens[1])]
+ // = decodeURIComponent(tokens[2]);
+ // }
+ // return params;
+// }
+// var $_GET = getQueryParams(document.location.search);
+
 
 mRequest.addEventListener("load", reqListener);
 mRequest.open("GET", mUrl, true);
