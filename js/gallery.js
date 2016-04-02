@@ -135,7 +135,7 @@ window.addEventListener('load', function()
 	{
 		$(this).toggleClass("rot270");
 		$("div.details").toggle();
-	}
+	});
 
 
 
