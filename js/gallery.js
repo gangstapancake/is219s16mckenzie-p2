@@ -59,8 +59,8 @@ function animate() {
 		$('#nextPhoto').click(function() 
 		{
 			console.log("click next");
-			var current = $('
-		});
+			swapPhoto();
+		}
 	
 	
 
