@@ -29,13 +29,23 @@ function animate() {
 		mLastFrameTime = currentTime;
 	}
 }
-$('#more').click(function() 
+$('img.moreIndicator').click(function() 
 	{	
 		alert("Clicked");
 		console.log("click more");
-		$(this).toggleClass("rot270");
-		$("div.details").toggle();
-	});
+		
+		if($("img.moreIndicator").hasClass("rot90"))
+		{
+			$(this).removeClass("rot90");
+			$(this).addClass("rot270");
+			$("div.details").fadetoggle();
+		}
+		else
+		{
+			$(this).removeClass("rot270");
+			$(this).addClass("rot90");
+			$("div.details").fadetoggle();
+		});
 
 		$('#prevPhoto').click(function() 
 		{
