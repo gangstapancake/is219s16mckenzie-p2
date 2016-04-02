@@ -2,6 +2,9 @@
 
 $(document).ready(function(){
 
+	
+			swapPhoto();
+
     window.requestAnimFrame = (function(){
       return  window.requestAnimationFrame       || 
               window.webkitRequestAnimationFrame || 
