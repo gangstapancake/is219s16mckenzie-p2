@@ -37,27 +37,35 @@ function animate() {
 	{	
 		console.log("click more");
 		
-		if($("img.moreIndicator").hasClass("rot90"))
+		if($(this).hasClass("rot90"))
 		{
-			$(this).removeClass("rot90");
-			$(this).addClass("rot270");
-			$("div.details").show();
+			$(this).removeClass("rot90").addClass("rot270");
+			$('details').eq(0).fadeToggle("slow", "linear");
 		}
 		else
 		{
-			$(this).removeClass("rot270");
-			$(this).addClass("rot90");
-			$("div.details").hide();		
+			$(this).removeClass("rot270").addClass("rot90");
+			$('details').eq(0).fadeToggle("slow", "linear");
 		}
 	});
 
 		$('#prevPhoto').click(function() 
 		{
 			console.log("click prev");
+			if(mCurrentIndex ==0)
+			{
+				mCurrentIndex = mImages.length-1;
+			}
+			else
+			{
+				mCurrentIndex--; 
+			}
+		}
 		});
 		
 		$('#nextPhoto').click(function() 
 		{
+			var mLastFrameTime = 0;
 			console.log("click next");
 			swapPhoto();
 		});
@@ -69,12 +77,14 @@ function swapPhoto() {
 	//Access the img element and replace its source
 	//with a new image from your images array which is loaded 
 	//from the JSON string
-	if(mCurrentIndex < mImages.length)
+	if(mCurrentIndex+1 < mImages.length)
+	
+	
 	{	
 		$('.thumbnail').attr('src', mImages[mCurrentIndex].img);
-		$('.location').text = mImages[mCurrentIndex].location;
-		$('.description').text = mImages[mCurrentIndex].description;
-		$('.date').text = mImages[mCurrentIndex].date;
+		$('.location').text = ("Location: " + mImages[mCurrentIndex].location);
+		$('.description').text = ("Description: " + mImages[mCurrentIndex].description);
+		$('.date').text = ("Date:" + mImages[mCurrentIndex].date);
 		console.log('swap photo');
 		console.log(mImages[mCurrentIndex].location);
 		console.log(mImages[mCurrentIndex].description);
@@ -117,18 +127,18 @@ if (mRequest.readyState == 4 && mRequest.status == 200) {
     }
 };
 
-// function getQueryParams(qs) {
- // qs = qs.split("+").join(" ");
- // var params = {},
- // tokens,
- // re = /[?&]?([^=]+)=([^&]*)/g;
- // while (tokens = re.exec(qs)) {
- // params[decodeURIComponent(tokens[1])]
- // = decodeURIComponent(tokens[2]);
- // }
- // return params;
-// }
-// var $_GET = getQueryParams(document.location.search);
+function getQueryParams(qs) {
+  qs = qs.split("+").join(" ");
+  var params = {},
+  tokens,
+ re = /[?&]?([^=]+)=([^&]*)/g;
+ while (tokens = re.exec(qs)) {
+  params[decodeURIComponent(tokens[1])]
+  = decodeURIComponent(tokens[2]);
+  }
+  return params;
+ }
+ var $_GET = getQueryParams(document.location.search);
 
 
 mRequest.addEventListener("load", reqListener);
