@@ -60,7 +60,6 @@ function animate() {
 			{
 				mCurrentIndex--; 
 			}
-		}
 		});
 		
 		$('#nextPhoto').click(function() 
